@@ -1,25 +1,41 @@
-<div class="widget-card">
+<div class="widget-card" (click)="hideMenu()">
   <!-- Header -->
   <div class="widget-header">
     <h3>{{ title }}</h3>
 
-    <div class="widget-actions">
-      <button class="icon-button">
-        <img src="/assets/icons/icon-expand.svg" alt="Expand" />
-      </button>
-
-      <button class="icon-button">
-        <img src="/assets/icons/icon-expand.svg" alt="Expand" />
-      </button>
-      
-      <button class="icon-button">
-        <img src="/assets/icons/icon-expand.svg" alt="Expand" />
-      </button>
-
-      <button class="icon-button btn-menu">
+    @if (isCompactView) {
+      <button class="icon-button btn-menu" (click)="toggleMenu($event)" aria-haspopup="true">
         <img src="/assets/icons/icon-menu.svg" alt="Menu" />
       </button>
-    </div>
+    }
+    @else {
+      <div class="widget-actions">
+        <button class="icon-button">
+          <img src="/assets/icons/icon-expand.svg" alt="Expand" />
+        </button>
+
+        <button class="icon-button">
+          <img src="/assets/icons/icon-expand.svg" alt="Expand" />
+        </button>
+        
+        <button class="icon-button">
+          <img src="/assets/icons/icon-expand.svg" alt="Expand" />
+        </button>
+
+        <button class="icon-button btn-menu" (click)="toggleMenu($event)" aria-haspopup="true">
+          <img src="/assets/icons/icon-menu.svg" alt="Menu" />
+        </button>
+      </div>
+    }
+
+    <!-- Flyout Menu -->
+    @if (menuOpen()) {
+      <div class="flyout-menu" role="menu" (click)="toggleMenu($event)">
+        <button role="menuitem">Expand</button>
+        <button role="menuitem">Duplicate</button>
+        <button role="menuitem">Share</button>
+      </div>
+    }
   </div>
 
   <!-- Body -->
