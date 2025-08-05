@@ -1,1 +1,50 @@
-<p>widget-card works!</p>
+<div class="widget-card">
+  <!-- Header -->
+  <div class="widget-header">
+    <h3>{{ title }}</h3>
+
+    <div class="widget-actions">
+      <button class="icon-button">
+        <img src="/assets/icons/icon-expand.svg" alt="Expand" />
+      </button>
+
+      <button class="icon-button">
+        <img src="/assets/icons/icon-expand.svg" alt="Expand" />
+      </button>
+      
+      <button class="icon-button">
+        <img src="/assets/icons/icon-expand.svg" alt="Expand" />
+      </button>
+
+      <button class="icon-button btn-menu">
+        <img src="/assets/icons/icon-menu.svg" alt="Menu" />
+      </button>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="widget-body">
+    <ng-content></ng-content>
+  </div>
+
+  <!-- Footer -->
+  @if (showFooter) {
+    <div class="widget-footer">
+      <span class="page-number">2/14</span>
+
+      <div class="paginate-actions">
+        <button class="nav-icon-btn">
+          <img src="/assets/icons/icon-arrow-left.svg" alt="Navigate Left" />
+        </button>
+
+        <button class="nav-icon-btn btn-right">
+          <img src="/assets/icons/icon-arrow-right.svg" alt="Navigate Right" />
+        </button>
+      </div>
+    </div>
+  }
+  @else {
+    <!-- Optional spacing if footer is not shown -->
+    <div class="footer-spacer"></div>
+  }
+</div>

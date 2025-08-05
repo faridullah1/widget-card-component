@@ -1,0 +1,31 @@
+.demo-wrapper {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  .custom-text-widget {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  .custom-text-widget p {
+    margin: 0 0 12px 0;
+  }
+
+  .custom-image-widget {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: block;
+  }
+}

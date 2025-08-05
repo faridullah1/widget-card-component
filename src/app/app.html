@@ -1,1 +1,16 @@
-<app-widget-card></app-widget-card>
+<main class="demo-wrapper">
+  <app-widget-card [title]="'Team Update'" [showFooter]="true">
+    <div class="custom-text-widget">
+      <p><strong>Team Update:</strong> A new feature deployment is scheduled for Friday, 10 AM.</p>
+      <p>Please review the latest QA notes and ensure all tasks are completed by Thursday EOD.</p>
+    </div>
+  </app-widget-card>
+
+  <app-widget-card [title]="'Analytics Preview'" [showFooter]="true">
+    <img src="https://picsum.photos/300/150" alt="Preview" class="custom-image-widget" />
+  </app-widget-card>
+
+  <app-widget-card [showFooter]="false">
+    <div>No footer</div>
+  </app-widget-card>
+</main>
