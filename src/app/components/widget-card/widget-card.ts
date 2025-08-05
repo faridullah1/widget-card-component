@@ -13,7 +13,7 @@ export class WidgetCard {
 
   menuOpen = signal<boolean>(false);
 
-  toggleMenu(ev: any): void {
+  toggleMenu(ev: MouseEvent): void {
     this.menuOpen.set(!this.menuOpen());
     ev.stopPropagation();
   }
